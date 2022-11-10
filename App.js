@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { View, StyleSheet, TextInput, Button } from 'react-native';
+import { WebView } from 'react-native-webview';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+  const [url, setUrl] = useState('');
+  const [go, setGo] = useState(false);
+  return(
+    <WebView
+      source={{ uri: "https://app.pipooh.com.br/" }}
+      style={{ marginTop: 20 }}
+    />
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
   },
-});
+  text: {
+    borderWidth: 1,
+    margin: 5,
+  },
+})
