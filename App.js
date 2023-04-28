@@ -8,18 +8,10 @@ export default function App() {
   return(
     <WebView
       source={{ uri: "https://app.pipooh.com.br/" }}
-      style={{ marginTop: 20 }}
+      // style={{ marginTop: 20,
+      // backgroundColor: #01b1af }}
+      style={[{ marginTop: 35 }, { backgroundColor: '#01b1af' }]}
     />
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  text: {
-    borderWidth: 1,
-    margin: 5,
-  },
-})
