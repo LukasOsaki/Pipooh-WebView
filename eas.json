@@ -1,0 +1,24 @@
+{
+  "cli": {
+    "version": ">= 3.13.3"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {}
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "appleId": "roberto_caraca@yahoo.com.br",
+        "ascAppId": "1563973985",
+        "appleTeamId": "UJQZU4L7Q8"
+      }
+    }
+  }
+}
