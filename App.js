@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, TextInput, Button } from 'react-native';
 import { WebView } from 'react-native-webview';
+import {Linking} from 'react-native';
 
 export default function App() {
   const [url, setUrl] = useState('');
@@ -10,7 +11,7 @@ export default function App() {
       source={{ uri: "https://app.pipooh.com.br/" }}
       onShouldStartLoadWithRequest={(event) => {
         const { url } = event;
-        if (!url.includes("app.pipooh")) {
+        if (!url.includes("app.pipooh") && !url.includes("google.com")) {
           if (url.startsWith('http://') || url.startsWith('https://')) {
             // URLs externos, abrir em um navegador separado
             Linking.openURL(url);
@@ -20,9 +21,7 @@ export default function App() {
         // URLs internos, permitir o carregamento no WebView
         return true;
       }}
-      // style={{ marginTop: 20,
-      // backgroundColor: #01b1af }}
-      style={[{ marginTop: 35 }, { backgroundColor: '#01b1af' }]}
+      style={[{ marginTop: 35 }, { backgroundColor: '#01b1af' }, {marginBottom: 25}]}
     />
   );
 }
